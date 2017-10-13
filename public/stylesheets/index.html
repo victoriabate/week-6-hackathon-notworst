@@ -3,45 +3,61 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
+
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/sorTable.css">
+    <script src="js/sorTable.js"></script>
+
     </head>
   <body>
     <h1><span class="blue"></span>Energiser<span class="blue"></span> <span class="yellow">Leaderboard</span></h1>
 
 
-   <table id="myTable" class="container">
-        <thead>
-            <tr>
-                <th><h1>Team</h1></th>
-                <th><h1>Score</h1></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>!Worst</td>
-                <td>9999</td>
-            </tr>
-            <tr>
-                <td>Spooky Otter</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Node.X</td>
-                <td>1</td>
-            </tr>
+    <table id="teams" class="sortable">
+    	<thead>
+    		<tr>
+    			<th><h1>Team</h1></th>
+    			<th><h1>Score</h1></th>
+    			<th><h1>Placeholder</h1></th>
+    			<th><h1>Placeholder</h1></th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>!Worst</td>
+    			<td>9999</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    		<tr>
+    			<td>Spooky Otter</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    		<tr>
+    			<td>Node.X</td>
+    			<td>1</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
         <tr>
-                <td>Solution</td>
-                <td>2</td>
-            </tr>
+    			<td>Solution</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
         <tr>
-                <td>Snapdragon</td>
-                <td>2</td>
-            </tr>
-        </tbody>
+    			<td>Snapdragon</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    	</tbody>
     </table>
     <button onclick="sortTable()">Sort</button>
     <script>
-    function sortTable() {
+      function sortTable() {
       var table, rows, switching, i, x, y, shouldSwitch;
       table = document.getElementById("myTable");
       switching = true;
@@ -58,10 +74,10 @@
           shouldSwitch = false;
           /*Get the two elements you want to compare,
           one from current row and one from the next:*/
-          x = rows[i].getElementsByTagName("TD")[1];
-          y = rows[i + 1].getElementsByTagName("TD")[1];
+          x = rows[i].getElementsByTagName("TD")[0];
+          y = rows[i + 1].getElementsByTagName("TD")[0];
           //check if the two rows should switch place:
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
             //if so, mark as a switch and break the loop:
             shouldSwitch= true;
             break;
@@ -75,6 +91,7 @@
         }
       }
       }
+
     </script>
   </body>
 </html>
