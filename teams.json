@@ -1,0 +1,27 @@
+[
+  {
+    "teamName": "Spooky Otter",
+    "score": 2,
+    "members": ["Ben","Claire","Lilly"]
+  },
+  {
+    "teamName": "SNAPDRAGON",
+    "score": 2,
+    "members": ["Nick","Sharon","Hamza","Doug"]
+  },
+  {
+    "teamName": "Node.X",
+    "score": 1,
+    "members": ["Nazia","Morgan","Jenifer","Julian"]
+  },
+  {
+    "teamName": "!worst",
+    "score": 2,
+    "members": ["Ash","Leigh","Pete","Victoria"]
+  },
+  {
+    "teamName": "Solution",
+    "score": 2,
+    "members": ["Mathew","Sina","Scott","Chris"]
+  }
+]
