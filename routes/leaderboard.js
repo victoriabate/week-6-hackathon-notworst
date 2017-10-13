@@ -5,7 +5,6 @@ const Team = require(`../models/teams.js`), // uncomment for mongoose
 
 router.get(`/`, (req, res, next) => {
   Team.find({},function(err,team){
-    console.log(team);
     var t5 = team[0].teamName;
     var t4 = team[1].teamName;
     var t3 = team[2].teamName;
