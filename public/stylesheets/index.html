@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/sorTable.css">
+    <script src="js/sorTable.js"></script>
+
+    </head>
+  <body>
+    <h1><span class="blue"></span>Energiser<span class="blue"></span> <span class="yellow">Leaderboard</span></h1>
+
+
+    <table id="teams" class="sortable">
+    	<thead>
+    		<tr>
+    			<th><h1>Team</h1></th>
+    			<th><h1>Score</h1></th>
+    			<th><h1>Placeholder</h1></th>
+    			<th><h1>Placeholder</h1></th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>!Worst</td>
+    			<td>9999</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    		<tr>
+    			<td>Spooky Otter</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    		<tr>
+    			<td>Node.X</td>
+    			<td>1</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+        <tr>
+    			<td>Solution</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+        <tr>
+    			<td>Snapdragon</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <button onclick="sortTable()">Sort</button>
+    <script>
+      function sortTable() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+      /*Make a loop that will continue until
+      no switching has been done:*/
+      while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.getElementsByTagName("TR");
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 1; i < (rows.length - 1); i++) {
+          //start by saying there should be no switching:
+          shouldSwitch = false;
+          /*Get the two elements you want to compare,
+          one from current row and one from the next:*/
+          x = rows[i].getElementsByTagName("TD")[0];
+          y = rows[i + 1].getElementsByTagName("TD")[0];
+          //check if the two rows should switch place:
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch= true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          /*If a switch has been marked, make the switch
+          and mark that a switch has been done:*/
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+      }
+
+    </script>
+  </body>
+</html>
