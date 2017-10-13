@@ -9,60 +9,49 @@
     <h1><span class="blue"></span>Energiser<span class="blue"></span> <span class="yellow">Leaderboard</span></h1>
 
 
-   <table id="myTable" class="container">
-        <thead>
-            <tr>
-                <th><h1>Team</h1></th>
-                <th><h1>Score</h1></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>!Worst</td>
-                <td>9999</td>
-            </tr>
-            <tr>
-                <td>Spooky Otter</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Node.X</td>
-                <td>1</td>
-            </tr>
+    <table class="container">
+    	<thead>
+    		<tr>
+    			<th><h1>Team</h1></th>
+    			<th><h1>Score</h1></th>
+    			<th><h1>Placeholder</h1></th>
+    			<th><h1>Placeholder</h1></th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>!Worst</td>
+    			<td>9999</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    		<tr>
+    			<td>Spooky Otter</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    		<tr>
+    			<td>Node.X</td>
+    			<td>1</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
         <tr>
-                <td>Solution</td>
-                <td>2</td>
-            </tr>
+    			<td>Solution</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
         <tr>
-                <td>Snapdragon</td>
-                <td>2</td>
-            </tr>
-        </tbody>
+    			<td>Snapdragon</td>
+    			<td>2</td>
+    			<td>fillme</td>
+    			<td>fillme</td>
+    		</tr>
+    	</tbody>
     </table>
-    <button onclick="sortTable()">Sort</button>
-    <script>
-    function sortTable() {
-      var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("myTable");
-      switching = true;
-      while (switching) {
-        switching = false;
-        rows = table.getElementsByTagName("TR");
-        for (i = 1; i < (rows.length - 1); i++) {
-          shouldSwitch = false;
-          x = rows[i].getElementsByTagName("TD")[1];
-          y = rows[i + 1].getElementsByTagName("TD")[1];
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-            shouldSwitch= true;
-            break;
-          }
-        }
-        if (shouldSwitch) {
-          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-          switching = true;
-        }
-      }
-      }
-    </script>
+    <!-- <a class="twitter-timeline" data-width="400" data-height="700" data-theme="dark" data-link-color="#19CF86 " href="https://twitter.com/theSchoolOfCode?ref_src=twsrc%5Etfw">Tweets by theSchoolOfCode</a>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
   </body>
 </html>
