@@ -108,3 +108,25 @@ h2 a {
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }
 }
+
+#btncontainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.btn {
+  background-color:  #FB667A;
+  color: #185875
+}
+
+.tablediv {
+  height: 20vh;
+  display: none;
+}
+
+.tablebtn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}

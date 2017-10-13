@@ -1,46 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
-    </head>
-  <body>
-    <h1><span class="blue"></span>Energiser<span class="blue"></span> <span class="yellow">Leaderboard</span></h1>
 
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
+</head>
 
-   <table id="myTable" class="container">
-        <thead>
-            <tr>
-                <th><h1>Team</h1></th>
-                <th><h1>Score</h1></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>!Worst</td>
-                <td>9999</td>
-            </tr>
-            <tr>
-                <td>Spooky Otter</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>Node.X</td>
-                <td>1</td>
-            </tr>
-        <tr>
-                <td>Solution</td>
-                <td>2</td>
-            </tr>
-        <tr>
-                <td>Snapdragon</td>
-                <td>2</td>
-            </tr>
-        </tbody>
-    </table>
-    <button onclick="sortTable()">Sort</button>
-    <script>
+<body>
+  <h1><span class="blue"></span>Energiser<span class="blue"></span> <span class="yellow">Leaderboard</span></h1>
+  <div id="btncontainer">
+    <button class="btn" onclick="sortTable()">Sort by score</button>
+  </div>
+  <table id="myTable" class="container">
+    <thead>
+      <tr>
+        <th>
+          <h1>Team</h1></th>
+        <th>
+          <h1>Score</h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <button class="tablebtn" onclick="toggle1()">
+          !Worst
+          </button>
+          <div id="tablediv1" class="tablediv">
+          </div>
+        </td>
+        <td>9999</td>
+      </tr>
+      <tr>
+        <td>
+          <button class="tablebtn" onclick="toggle2()">
+          Spooky Otter
+          </button>
+          <div id="tablediv2" class="tablediv">
+          </div>
+        </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>
+          <button class="tablebtn" onclick="toggle3()">
+            Node.X
+            </button>
+            <div id="tablediv3" class="tablediv">
+            </div>
+          </td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>
+          <button class="tablebtn" onclick="toggle4()">
+          Solution
+          </button>
+          <div id="tablediv4" class="tablediv">
+          </div>
+        </td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>
+          <button class="tablebtn" onclick="toggle5()">
+          Snapdragon
+          </button>
+          <div id="tablediv5" class="tablediv">
+          </div>
+        </td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
     function sortTable() {
       var table, rows, switching, i, x, y, shouldSwitch;
       table = document.getElementById("myTable");
@@ -53,7 +88,7 @@
           x = rows[i].getElementsByTagName("TD")[1];
           y = rows[i + 1].getElementsByTagName("TD")[1];
           if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-            shouldSwitch= true;
+            shouldSwitch = true;
             break;
           }
         }
@@ -62,7 +97,40 @@
           switching = true;
         }
       }
+    }
+
+    function myFunction(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
       }
-    </script>
-  </body>
+    }
+
+    function toggle1(){
+      myFunction("tablediv1");
+    }
+
+    function toggle2(){
+      myFunction("tablediv2");
+    }
+
+    function toggle3(){
+      myFunction("tablediv3");
+    }
+
+    function toggle4(){
+      myFunction("tablediv4");
+    }
+
+    function toggle5(){
+      myFunction("tablediv5");
+    }
+
+
+
+  </script>
+</body>
+
 </html>
