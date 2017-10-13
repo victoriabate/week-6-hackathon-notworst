@@ -1,17 +1,17 @@
 // 3rd party modules
 require(`dotenv`).config();
-const express = require(`express`);
-const path = require(`path`);
-const favicon = require(`serve-favicon`);
-const logger = require(`morgan`);
-const cookieParser = require(`cookie-parser`);
-const bodyParser = require(`body-parser`);
+const express = require(`express`),
+      path = require(`path`),
+      favicon = require(`serve-favicon`),
+      logger = require(`morgan`),
+      cookieParser = require(`cookie-parser`),
+      bodyParser = require(`body-parser`);
 // const mongoose = require(`mongoose`); // uncomment for mongoose
 
 // my modules
 const config = require(`./config/config.js`);
 const index = require(`./routes/index`);
-const users = require(`./routes/users`);
+const leaderboard = require(`./routes/leaderboard`);
 
 // connect to database
 // uncomment for mongoose
@@ -36,7 +36,7 @@ app.use(cookieParser()); //helps you do stuff across sessions
 app.use(express.static(path.join(__dirname, `public`)));
 
 app.use(`/`, index);
-app.use(`/users`, users);
+app.use(`/leaderboard`, leaderboard);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

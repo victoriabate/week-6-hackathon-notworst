@@ -1,10 +1,11 @@
 // const Post = require(`../models/posts.js`); // uncomment for mongoose
 const express = require(`express`);
 const router = express.Router();
+const path = require('path');
 
 /* GET users listing. */
 router.get(`/`, (req, res, next) => {
-  res.send(`respond with a resource`);
+  res.sendFile(path.join(__dirname,'../views/index.html'));
 });
 
 module.exports = router;
