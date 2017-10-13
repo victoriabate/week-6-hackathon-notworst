@@ -5,21 +5,18 @@ const express = require(`express`),
       favicon = require(`serve-favicon`),
       logger = require(`morgan`),
       cookieParser = require(`cookie-parser`),
-      bodyParser = require(`body-parser`);
-// const mongoose = require(`mongoose`); // uncomment for mongoose
+      bodyParser = require(`body-parser`),
+      mongoose = require(`mongoose`); // uncomment for mongoose
 
 // my modules
-const config = require(`./config/config.js`);
-const index = require(`./routes/index`);
-const leaderboard = require(`./routes/leaderboard`);
+const config = require(`./config/config.js`),
+      index = require(`./routes/index`),
+      leaderboard = require(`./routes/leaderboard`);
 
 // connect to database
 // uncomment for mongoose
-// mongoose.Promise = global.Promise;
-// mongoose.connect(`${config.dbProtocol}${config.dbUser}:${config.dbPass}@${config.dbHost}:${config.dbPort}/${config.dbName}`, (err, database) => {
-//   db = database;
-//   return err ? console.log(err) : console.log(`connected to ${db}`)
-// });
+mongoose.Promise = global.Promise;
+mongoose.connect(`${config.dbProtocol}${config.dbUser}:${config.dbPass}@${config.dbHost}:${config.dbPort}/${config.dbName}`, {useMongoClient: true});
 
 const app = express();
 
@@ -28,7 +25,7 @@ app.set(`views`, path.join(__dirname, `views`));
 app.set(`view engine`, `hbs`);
 
 // uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, `public`, `favicon.ico`)));
+app.use(favicon(path.join(__dirname, `public`, `favicon.ico`)));
 app.use(logger(`dev`)); // this is to help with logging
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
